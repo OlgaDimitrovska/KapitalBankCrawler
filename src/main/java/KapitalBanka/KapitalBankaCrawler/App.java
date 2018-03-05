@@ -31,6 +31,9 @@ public class App
     	 
     	 
          String jsonMsg = "[";
+         int brojacKolku = rows.size();
+         int brojacTmp=0;
+         
 
          for(org.jsoup.nodes.Element row :rows)
         
@@ -39,6 +42,12 @@ public class App
              org.jsoup.select.Elements columns = row.select("td");
              
              int i = 1;
+             
+             
+            brojacTmp++;
+             
+             if(brojacTmp<brojacKolku)
+             {
              
              jsonMsg = jsonMsg + "{";
           	
@@ -111,9 +120,13 @@ public class App
 
              }
              
+             
+             
             
              
              jsonMsg = jsonMsg + "},";
+            }
+            else {}
              
              System.out.println();
               
